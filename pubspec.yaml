@@ -31,6 +31,8 @@ dependencies:
   amplify_flutter:
   amplify_datastore:
   flutter_bloc:
+  amplify_api:
+  amplify_auth_cognito:
 
 dev_dependencies:
   flutter_test:

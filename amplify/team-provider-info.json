@@ -10,6 +10,11 @@
       "StackName": "amplify-todosaws-staging-115648",
       "StackId": "arn:aws:cloudformation:us-east-2:849004838217:stack/amplify-todosaws-staging-115648/5105d1f0-a5bd-11eb-8bc9-0268c1a9cae0",
       "AmplifyAppId": "d3niig3160hz6q"
+    },
+    "categories": {
+      "auth": {
+        "todosaws6911b51e": {}
+      }
     }
   }
 }

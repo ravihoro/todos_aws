@@ -23,6 +23,11 @@ class TodoCubit extends Cubit<TodoState> {
 
   final _todoRepository = TodoRepository();
 
+  void observeTodo() {
+    final todosStream = _todoRepository.observeTodos();
+    todosStream.listen((_) => getTodos());
+  }
+
   void getTodos() async {
     if (state is ListTodosSuccess == false) {
       emit(LoadingTodos());
@@ -39,7 +44,7 @@ class TodoCubit extends Cubit<TodoState> {
     emit(LoadingTodos());
     try {
       await (_todoRepository.createTodo(title));
-      getTodos();
+      //getTodos();
     } catch (e) {
       emit(ListTodosFailed(exception: e));
     }
@@ -49,7 +54,7 @@ class TodoCubit extends Cubit<TodoState> {
     emit(LoadingTodos());
     try {
       await _todoRepository.updateTodoIsComplete(todo, isComplete);
-      getTodos();
+      //getTodos();
     } catch (e) {
       emit(ListTodosFailed(exception: e));
     }
